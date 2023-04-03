@@ -1,0 +1,118 @@
+.btn-custom{
+    background: #020345;
+    background: linear-gradient(90deg, rgb(2, 3, 69) 0%, rgb(41, 185, 214) 100%);
+    background: -moz-linear-gradient(90deg, rgb(2, 3, 69) 0%, rgb(41, 185, 214) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(2, 3, 69) 0%, rgb(41, 185, 214) 100%);
+    color: white;
+    border: none;
+}
+
+.ico-custom{
+    color: #020345;
+}
+
+
+/* form-container */
+.container-custom{
+    background-color: #fff;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+}
+
+.form-container{
+    transition: all 0.5s ease-in-out;
+}
+
+.sign-in-container{
+    z-index: 2;
+}
+
+.container-custom.right-panel-active .sign-in-container{
+    transform: translateX(100%);
+}
+
+.sign-up-container{
+    z-index: 1;
+    opacity: 0;
+}
+
+.container-custom.right-panel-active .sign-up-container{
+    transform: translateX(100%);
+    background-color: #fff;
+    opacity: 1;
+    z-index: 5;
+    animation: swipe 0.5s;
+}
+
+@keyframes swipe{
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+/* form-container */
+
+
+/* overlay-container */
+.overlay-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    z-index: 100;
+}
+
+.container-custom.right-panel-active .overlay-container{
+    transform: translateX(-100%);
+}
+
+.overlay-custom{
+    background: #020345;
+    background: linear-gradient(90deg, rgb(2, 3, 69) 0%, rgb(41, 185, 214) 100%);
+    background: -moz-linear-gradient(90deg, rgb(2, 3, 69) 0%, rgb(41, 185, 214) 100%);
+    background: -webkit-linear-gradient(90deg, rgb(2, 3, 69) 0%, rgb(41, 185, 214) 100%);
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.container-custom.right-panel-active .overlay-custom{
+    transform: translateX(50%);
+}
+
+.overlay-panel{
+    position: absolute;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+}
+
+.overlay-left{
+    transform: translateX(-20%);
+}
+
+.container-custom.right-panel-active .overlay-left{
+    transform: translateX(0);
+}
+
+.overlay-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container-custom.right-panel-active .overlay-right{
+    transform: translateX(20%);
+}
+/* overlay-container */
